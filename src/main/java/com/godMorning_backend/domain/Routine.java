@@ -10,10 +10,10 @@ import lombok.Setter;
 public class Routine {
     private Long id;
     private String title;
-    private String timezone;
-    private String create_time;
+    private String create_date;
+    public Long post_no;
 
-    public String post_no;
+    private String timezone;
 
 
 }

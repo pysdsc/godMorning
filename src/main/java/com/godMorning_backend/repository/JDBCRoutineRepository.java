@@ -22,7 +22,7 @@ public class JDBCRoutineRepository implements RoutineRepository{
     @Override
     public void saveRoutine(Routine routine) {
         String sql = "INSERT INTO Routine(id, title, timezone, create_time)";
-        Object[] Params = {routine.getId(), routine.getTitle(), routine.getTimezone(), routine.getCreate_time()};
+        Object[] Params = {routine.getId(), routine.getTitle(), routine.getTimezone(), routine.getCreate_date()};
         jdbcTemplate.update(sql,Params);
     }
 
@@ -37,21 +37,21 @@ public class JDBCRoutineRepository implements RoutineRepository{
             routine.setId((rs.getLong("id")));
             routine.setTitle((rs.getString("title")));
             routine.setTimezone((rs.getString("timezone")));
-            routine.setCreate_time((rs.getString("create_time")));
+            routine.setCreate_date((rs.getString("create_time")));
 
             return routine;
         };
     }
     public void updateRoutine(Routine routine) {
-        String sql = "UPDATE Routine(post_no, title, timezone, create_time)";
-        Object[] Params = {routine.getPost_no(), routine.getTitle(), routine.getTimezone(), routine.getCreate_time()};
+        String sql = "UPDATE Routine(post_no, title, timezone, create_date)";
+        Object[] Params = {routine.getPost_no(), routine.getTitle(), routine.getTimezone(), routine.getCreate_date()};
         jdbcTemplate.update(sql,Params);
     }
 
     @Override
     public void deleteRoutine(Routine routine) {
-       String sql = "DELETE from Routine(post_no,id, title, timezone, create_time)";
-        Object[] Params = {routine.getPost_no(), routine.getTitle(), routine.getTimezone(), routine.getCreate_time()};
+       String sql = "DELETE from Routine(post_no,id, title, timezone, create_date)";
+        Object[] Params = {routine.getPost_no(), routine.getTitle(), routine.getTimezone(), routine.getCreate_date()};
         jdbcTemplate.update(sql,Params);
     }
 

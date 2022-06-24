@@ -38,7 +38,8 @@ public class HeartController {
 
     }
 
-    @RequestMapping(value = "heart/insert", produces = "application/json; charset=UTF-8")
+    @RequestMapping(value = "heart/insert", method= RequestMethod.GET,
+            produces = "application/json; charset=UTF-8")
     public int insertHeart(Heart heart) {
 
         long id = 1L;

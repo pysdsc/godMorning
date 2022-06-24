@@ -11,8 +11,6 @@ import java.util.Map;
 public class JDBCHeartRepository implements HeartRepository {
 
     private JdbcTemplate jdbcTemplate;
-
-
     public JDBCHeartRepository(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }

@@ -74,12 +74,12 @@ public class RoutineController {
         id = user.getId();
         title = routine.getTitle();
         timezone = routine.getTimezone();
-        creat_time= routine.getCreate_time();
+        creat_time= routine.getCreate_date();
 
         routine.setId(id);
         routine.setTitle(title);
         routine.setTimezone(timezone);
-        routine.setCreate_time(creat_time);
+        routine.setCreate_date(creat_time);
 
         routineServiceImpl.saveRoutine(routine);
 
